@@ -1,0 +1,31 @@
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>{{heroChild.superhero}}</mat-card-title>
+        <mat-card-subtitle>{{heroChild.alter_ego}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- <img mat-card-image src="assets/heroes/{{heroChild.id}}.jpg" alt=""> -->
+    <img mat-card-image [src]="heroChild | imageHero"  alt="Photo of a Shiba Inu" >
+
+    <mat-card-content>
+        <h3>{{heroChild.publisher}}</h3>
+        <p>
+            <strong>First Appearance: </strong>  {{heroChild.first_appearance}}
+            <br>
+            <strong> Character: </strong> {{heroChild.characters}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button color="warn"
+         [routerLink]="['/heroes',heroChild.id]"
+         >See more...
+        </button>
+
+        <button mat-button color="info" 
+        [routerLink]="['/heroes/edit',heroChild.id]">
+        Edit
+    </button>
+    </mat-card-actions>
+
+</mat-card>
