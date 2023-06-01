@@ -5,6 +5,7 @@ import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { MarkersComponent } from './pages/markers/markers.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+import { AlonePageComponent } from '../alone/pages/alone-page/alone-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path:'markers', component: MarkersComponent},
       {path:'properties', component: PropertiesComponent},
       {path:'**', redirectTo:'fullScreen'},
+
     ]
 
   }

@@ -4,7 +4,6 @@ import{ Map } from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 
 @Component({
-  selector: 'app-full-screen',
   templateUrl: './full-screen.component.html',
   styleUrls: ['./full-screen.component.css']
 })

@@ -11,8 +11,9 @@ import { FullScreenComponent } from './pages/full-screen/full-screen.component';
 import { MarkersComponent } from './pages/markers/markers.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+import { CounterAloneComponent } from '../alone/components/counter-alone/counter-alone.component';
+import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
 
 
 @NgModule({
@@ -22,12 +23,13 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
     MarkersComponent,
     ZoomRangeComponent,
     PropertiesComponent,
-    SideMenuComponent,
-    MapsLayoutComponent
+    MapsLayoutComponent,
   ],
   imports: [
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,
+    CounterAloneComponent,
+    SideMenuComponent
   ]
 })
 export class MapsModule { }
