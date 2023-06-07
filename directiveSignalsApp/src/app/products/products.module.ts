@@ -6,11 +6,11 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
   declarations: [
 
-    ProductPageComponent
+    ProductPageComponent,
+
   ],
   imports: [
     CommonModule,

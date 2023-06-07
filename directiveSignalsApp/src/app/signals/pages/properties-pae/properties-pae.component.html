@@ -1,0 +1,43 @@
+<h1>Mutaciones</h1>
+<hr>
+
+<div class="row">
+  <div class="col-6">
+
+    <input
+    title="Cambio"
+    type="text"
+    class="form-control mb-2"
+    #txtEmail
+    (input)="onFileUpdate('email', txtEmail.value)"
+    [value]="user().email"
+    >
+
+    <input
+    title="Cambio"
+    type="text"
+    class="form-control mb-2"
+    #txtFirstName
+    (input)="onFileUpdate('first_name', txtFirstName.value)"
+    [value]="user().first_name"
+    >
+
+    <input
+    title="Cambio"
+    type="text"
+    class="form-control mb-2"
+    #txtLastName
+    (input)="onFileUpdate('last_name', txtLastName.value)"
+    [value]="user().last_name"
+    >
+
+
+  </div>
+  <div class="col-6">
+    <!-- Data del usuario -->
+    <pre>{{user() | json}}</pre>
+    {{fullName()}}
+
+    <button (click)="increaseBy(+1)" class="btn btn-primary"> + 1</button>
+  </div>
+</div>
