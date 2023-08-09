@@ -10,6 +10,8 @@ import { Model } from 'mongoose';
 import { LoginDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './interfaces/jwt-payload';
+import { LoginResponse } from './interfaces/login-response';
+import { RegisterDto } from './dto/register.dto';
 
 @Injectable()
 export class AuthService {
@@ -48,13 +50,23 @@ export class AuthService {
   }
 
 
+  async register( registerDto: RegisterDto): Promise<LoginResponse>{
+  
+    const user =  await this.create(registerDto);
+
+    return {
+      user: user,
+      token: this.getJwToken({id: user._id}),
+
+    }
+  }
 
   /**
    * User{_id,email,roles}
    * Token -> dfgsg.fsdfds.fds
    */
 
-  async login(loginDto: LoginDto){
+  async login(loginDto: LoginDto): Promise<LoginResponse>{
 
     const {email, password} = loginDto;
     const user = await this.userModel.findOne({email});
