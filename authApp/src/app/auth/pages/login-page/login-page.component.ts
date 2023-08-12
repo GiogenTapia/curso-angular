@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   templateUrl: './login-page.component.html',
@@ -8,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class LoginPageComponent {
 
 private fb = inject( FormBuilder  );
+private _authService = inject( AuthService);
 
 public myForm: FormGroup = this.fb.group({
   email: ['', [Validators.required, Validators.email]],
@@ -18,6 +20,14 @@ public myForm: FormGroup = this.fb.group({
 
 login(){
   console.log(this.myForm);
+  const {email, password} = this.myForm.value;
+
+  this._authService.login(email, password).subscribe(
+    data => {
+      console.log({data});
+
+    }
+  );
 
 }
 
