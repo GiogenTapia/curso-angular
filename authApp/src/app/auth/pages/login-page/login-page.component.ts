@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from '../../services/auth.service';
 
+import Swal from 'sweetalert2'
+
 @Component({
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
@@ -22,11 +24,15 @@ login(){
   console.log(this.myForm);
   const {email, password} = this.myForm.value;
 
-  this._authService.login(email, password).subscribe(
-    data => {
-      console.log({data});
-
+  this._authService.login(email, password)
+  .subscribe({
+    next: () => console.log('Its good'),
+    error: (message) => {
+      Swal.fire('Error', message, 'error' )
     }
+
+
+  }
   );
 
 }
