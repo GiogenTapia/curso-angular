@@ -80,7 +80,7 @@ export class AuthService {
 
   createUser(registerUser: RegisterUser): Observable<boolean>{
     const url = `${this.baseUrl}/register`;
-
+    this.http.post(url,registerUser);
     return of(true);
 
   }
