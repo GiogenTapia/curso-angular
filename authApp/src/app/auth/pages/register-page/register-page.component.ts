@@ -33,7 +33,7 @@ export class RegisterPageComponent {
     }
 
     this._authService.createUser(user).subscribe({
-      next: ()=> this._route.navigateByUrl('/auth/login'),
+      next: ()=> this._route.navigateByUrl('/dashboard'),
       error:(message) => {
         Swal.fire('Error', message, 'error' )
       }
