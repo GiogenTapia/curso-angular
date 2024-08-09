@@ -1,1 +1,3 @@
-<p>change-detection works!</p>
+<app-title [title]="currentFramework()" withShadow ></app-title>
+<pre>{{frameworkAsSignal() | json }}</pre>
+<pre>{{frameworkAsProperty | json }}</pre>
